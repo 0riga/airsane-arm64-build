@@ -23,8 +23,8 @@ jobs:
             cp airsaned /out/
           "
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: airsaned-arm64
-          path: airsaned
+          tag_name: build-${{ github.run_number }}
+          files: airsaned
